@@ -4,7 +4,8 @@ const { createProxyMiddleware } = require("http-proxy-middleware");
 
 module.exports = function (app) {
   app.use(
-    createProxyMiddleware("/api", {
+    "/api",
+    createProxyMiddleware({
       // 설정된 서버 url 입력
       // 로컬 서버(http) - 로컬 클라이언트(http) : 정상 작동, DB 데이터 정상 작동
       // target: "http://localhost:8000",

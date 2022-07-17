@@ -45,7 +45,7 @@ export function registerUser(dataToSubmit) {
 export function authUser() {
   // 서버와 통신해서 받아온 값을 request에 넣음
   const request = axios
-    .get("https://rootingforyou.herokuapp.com/api/users/auth")
+    .get("/api/users/auth")
     .then((response) => response.data);
 
   // request를 action의 payload로 넣어서, user_reducer.js의 AUTH_USER에 보냄
