@@ -16,11 +16,13 @@ import {
   SHOW_DETAIL,
 } from "./types";
 
+const URI = "https://rootingforyou.herokuapp.com";
+
 // 로그인
 export function loginUser(dataToSubmit) {
   // server/index.js에 작성한 라우트와 통신
   const request = axios
-    .post("/api/users/login", dataToSubmit)
+    .post(`${URI}/api/users/login`, dataToSubmit)
     .then((response) => response.data);
 
   return {
@@ -32,7 +34,7 @@ export function loginUser(dataToSubmit) {
 // 회원가입
 export function registerUser(dataToSubmit) {
   const request = axios
-    .post("/api/users/register", dataToSubmit)
+    .post(`${URI}/api/users/register`, dataToSubmit)
     .then((response) => response.data);
 
   return {
@@ -45,7 +47,7 @@ export function registerUser(dataToSubmit) {
 export function authUser() {
   // 서버와 통신해서 받아온 값을 request에 넣음
   const request = axios
-    .get("/api/users/auth")
+    .get(`${URI}/api/users/auth`)
     .then((response) => response.data);
 
   // request를 action의 payload로 넣어서, user_reducer.js의 AUTH_USER에 보냄
@@ -58,7 +60,7 @@ export function authUser() {
 // 로그아웃
 export const logoutUser = () => {
   const request = axios
-    .get("/api/users/logout")
+    .get(`${URI}/api/users/logout`)
     .then((response) => response.data);
 
   return {
@@ -70,7 +72,7 @@ export const logoutUser = () => {
 // 비밀번호 변경 할 때
 export function changePswd(dataToSubmit) {
   const request = axios
-    .post("/api/users/changepassword", dataToSubmit)
+    .post(`${URI}/api/users/changepassword`, dataToSubmit)
     .then((response) => response.data);
 
   return {
@@ -82,7 +84,7 @@ export function changePswd(dataToSubmit) {
 // 회원 탈퇴 할 때
 export function deleteUser(dataToSubmit) {
   const request = axios
-    .post("/api/users/withdrawal", dataToSubmit)
+    .post(`${URI}/api/users/withdrawal`, dataToSubmit)
     .then((response) => response.data);
 
   return {
@@ -94,7 +96,7 @@ export function deleteUser(dataToSubmit) {
 // 게시물 등록할 때
 export function addPost(dataToSubmit) {
   const request = axios
-    .post("/api/users/posting", dataToSubmit)
+    .post(`${URI}/api/users/posting`, dataToSubmit)
     .then((response) => response.data);
 
   // 이게 바로 action에 들어가는 값들
@@ -107,7 +109,7 @@ export function addPost(dataToSubmit) {
 // 전체 게시물 불러올 때
 export function loadPost() {
   const request = axios
-    .get("/api/users/loadpost")
+    .get(`${URI}/api/users/loadpost`)
     .then((response) => response.data);
 
   return {
@@ -119,7 +121,7 @@ export function loadPost() {
 // 내 게시물 불러올 때
 export function loadMyPost(dataToSubmit) {
   const request = axios
-    .post("/api/users/loadmypost", dataToSubmit)
+    .post(`${URI}/api/users/loadmypost`, dataToSubmit)
     .then((response) => response.data);
 
   return {
@@ -131,7 +133,7 @@ export function loadMyPost(dataToSubmit) {
 // 특정 유저 게시물 검색으로 불러올 때
 export function searchPost(dataToSubmit) {
   const request = axios
-    .post("/api/users/searchpost", dataToSubmit)
+    .post(`${URI}/api/users/searchpost`, dataToSubmit)
     .then((response) => response.data);
 
   return {
@@ -143,7 +145,7 @@ export function searchPost(dataToSubmit) {
 // 특정 게시물 상세보기
 export function showDetail(dataToSubmit) {
   const request = axios
-    .post("/api/users/showdetail", dataToSubmit)
+    .post(`${URI}/api/users/showdetail`, dataToSubmit)
     .then((response) => response.data);
 
   return {
@@ -164,7 +166,7 @@ export function initSearch() {
 // 게시물 삭제할 때
 export function deletePost(dataToSubmit) {
   const request = axios
-    .post("/api/users/deletemypost", dataToSubmit)
+    .post(`${URI}/api/users/deletemypost`, dataToSubmit)
     .then((response) => response.data);
 
   return {
@@ -176,7 +178,7 @@ export function deletePost(dataToSubmit) {
 // 회원 탈퇴 시 해당 유저 게시물 전체 삭제
 export function deleteWholePost(dataToSubmit) {
   const request = axios
-    .post("/api/users/deleteuserwholepost", dataToSubmit)
+    .post(`${URI}/api/users/deleteuserwholepost`, dataToSubmit)
     .then((response) => response.data);
 
   return {
