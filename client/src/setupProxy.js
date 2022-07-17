@@ -16,8 +16,9 @@ module.exports = function (app) {
       // 현재 Netlify 배포 완료. index.js 잘 보임. 404 오류 발생 중...
       // 현재 AWS EC2 서버 배포 완료. index.js 잘 작동. DB 연결 잘됨.
 
+      // Heroku 서버(https) - 로컬 클라이언트(http) : 정상 작동, DB 데이터 정상 작동
       // Heroku 서버(https) - Netlify 클라이언트(https)
-      target: "https://rootingforyou.herokuapp.com",
+      target: "https://rootingforyou.herokuapp.com/",
       changeOrigin: true,
     })
   );
