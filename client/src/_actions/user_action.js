@@ -16,6 +16,9 @@ import {
   SHOW_DETAIL,
 } from "./types";
 
+// axios CORS 관련 전역 처리
+axios.defaults.withCredentials = true;
+
 // 로그인
 export function loginUser(dataToSubmit) {
   // server/index.js에 작성한 라우트와 통신
