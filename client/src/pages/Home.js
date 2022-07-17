@@ -5,11 +5,18 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { loadPost } from "../_actions/user_action";
 import { Link } from "react-router-dom";
+// import axios from "axios";
 
 function Home() {
   const dispatch = useDispatch();
 
   const [postingData, setPostingData] = useState([]);
+
+  // 백엔드와의 연결 확인용
+  // axios
+  //   .get("https://rootingforyou.herokuapp.com")
+  //   .then((response) => console.log("server is linked"))
+  //   .catch((err) => console.log("error", err));
 
   useEffect(() => {
     dispatch(loadPost()).then((response) => {
