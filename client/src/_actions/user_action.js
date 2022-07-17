@@ -16,6 +16,8 @@ import {
   SHOW_DETAIL,
 } from "./types";
 
+const URI = "https://rootingforyou.herokuapp.com";
+
 // 로그인
 export function loginUser(dataToSubmit) {
   // server/index.js에 작성한 라우트와 통신
@@ -104,10 +106,22 @@ export function addPost(dataToSubmit) {
   };
 }
 
+// // 전체 게시물 불러올 때
+// export function loadPost() {
+//   const request = axios
+//     .get("/api/users/loadpost")
+//     .then((response) => response.data);
+
+//   return {
+//     type: LOAD_POST,
+//     payload: request,
+//   };
+// }
+
 // 전체 게시물 불러올 때
 export function loadPost() {
   const request = axios
-    .get("/api/users/loadpost")
+    .get(`${URI}/api/users/loadpost`)
     .then((response) => response.data);
 
   return {
