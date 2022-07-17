@@ -19,6 +19,11 @@ import {
 // axios CORS 관련 전역 처리
 axios.defaults.withCredentials = true;
 
+// axios baseURL 설정
+const instance = axios.create({
+  baseURL: "https://rootingforyou.herokuapp.com",
+});
+
 // 로그인
 export function loginUser(dataToSubmit) {
   // server/index.js에 작성한 라우트와 통신
@@ -47,7 +52,7 @@ export function registerUser(dataToSubmit) {
 // 인증
 export function authUser() {
   // 서버와 통신해서 받아온 값을 request에 넣음
-  const request = axios
+  const request = instance
     .get("/api/users/auth")
     .then((response) => response.data);
 
@@ -109,7 +114,7 @@ export function addPost(dataToSubmit) {
 
 // 전체 게시물 불러올 때
 export function loadPost() {
-  const request = axios
+  const request = instance
     .get("/api/users/loadpost")
     .then((response) => response.data);
 
