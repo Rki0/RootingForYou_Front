@@ -7,7 +7,7 @@ module.exports = function (app) {
     createProxyMiddleware("/api", {
       // 설정된 서버 url 입력
       // target: "http://localhost:8000",
-      target: "https://rootingforyou.herokuapp.com",
+      target: "http://13.209.66.142:8000",
       changeOrigin: true,
     })
   );
