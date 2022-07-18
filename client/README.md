@@ -3,6 +3,7 @@
 이번에 처음으로 배포해본 모바일 웹에 대한 코드 리뷰를 해보고자 한다.
 
 [배포 관련 Github 보기](https://github.com/Rki0/RootingForYou_Deployed)
+[Back-end Gibhub 보기](https://github.com/Rki0/Nodejs_Heroku)
 
 ## 📂 파일 구조
 
