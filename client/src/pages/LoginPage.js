@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../_actions/user_action";
 
-function MyPage() {
+function Loginpage() {
   const [userEmail, setUserEmail] = useState("");
 
   const [userPswd, setUserPswd] = useState("");
@@ -78,4 +78,4 @@ function MyPage() {
   );
 }
 
-export default MyPage;
+export default Loginpage;
