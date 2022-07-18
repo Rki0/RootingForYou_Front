@@ -16,7 +16,7 @@ import {
   SHOW_DETAIL,
 } from "./types";
 
-// instance CORS 관련 전역 처리
+// axios CORS 관련 전역 처리
 axios.defaults.withCredentials = true;
 
 // instance baseURL 설정
@@ -53,7 +53,7 @@ export function registerUser(dataToSubmit) {
 export function authUser() {
   // 서버와 통신해서 받아온 값을 request에 넣음
   const request = instance
-    .get("/api/users/auth")
+    .get("/api/users/auth", { withCredentials: true })
     .then((response) => response.data);
 
   // request를 action의 payload로 넣어서, user_reducer.js의 AUTH_USER에 보냄
@@ -115,7 +115,7 @@ export function addPost(dataToSubmit) {
 // 전체 게시물 불러올 때
 export function loadPost() {
   const request = instance
-    .get("/api/users/loadpost")
+    .get("/api/users/loadpost", { withCredentials: true })
     .then((response) => response.data);
 
   return {
