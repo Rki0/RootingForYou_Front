@@ -17,7 +17,7 @@ import {
 } from "./types";
 
 // axios CORS 관련 전역 처리
-axios.defaults.withCredentials = true;
+// axios.defaults.withCredentials = true;
 
 // instance baseURL 설정
 const instance = axios.create({
