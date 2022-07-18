@@ -28,7 +28,7 @@ const instance = axios.create({
 export function loginUser(dataToSubmit) {
   // server/index.js에 작성한 라우트와 통신
   const request = instance
-    .post("/api/users/login", dataToSubmit)
+    .post("/api/users/login", dataToSubmit, { withCredentials: true })
     .then((response) => response.data);
 
   return {
@@ -40,7 +40,7 @@ export function loginUser(dataToSubmit) {
 // 회원가입
 export function registerUser(dataToSubmit) {
   const request = instance
-    .post("/api/users/register", dataToSubmit)
+    .post("/api/users/register", dataToSubmit, { withCredentials: true })
     .then((response) => response.data);
 
   return {
@@ -66,7 +66,7 @@ export function authUser() {
 // 로그아웃
 export const logoutUser = () => {
   const request = instance
-    .get("/api/users/logout")
+    .get("/api/users/logout", { withCredentials: true })
     .then((response) => response.data);
 
   return {
@@ -78,7 +78,7 @@ export const logoutUser = () => {
 // 비밀번호 변경 할 때
 export function changePswd(dataToSubmit) {
   const request = instance
-    .post("/api/users/changepassword", dataToSubmit)
+    .post("/api/users/changepassword", dataToSubmit, { withCredentials: true })
     .then((response) => response.data);
 
   return {
@@ -90,7 +90,7 @@ export function changePswd(dataToSubmit) {
 // 회원 탈퇴 할 때
 export function deleteUser(dataToSubmit) {
   const request = instance
-    .post("/api/users/withdrawal", dataToSubmit)
+    .post("/api/users/withdrawal", dataToSubmit, { withCredentials: true })
     .then((response) => response.data);
 
   return {
@@ -102,7 +102,7 @@ export function deleteUser(dataToSubmit) {
 // 게시물 등록할 때
 export function addPost(dataToSubmit) {
   const request = instance
-    .post("/api/users/posting", dataToSubmit)
+    .post("/api/users/posting", dataToSubmit, { withCredentials: true })
     .then((response) => response.data);
 
   // 이게 바로 action에 들어가는 값들
@@ -127,7 +127,7 @@ export function loadPost() {
 // 내 게시물 불러올 때
 export function loadMyPost(dataToSubmit) {
   const request = instance
-    .post("/api/users/loadmypost", dataToSubmit)
+    .post("/api/users/loadmypost", dataToSubmit, { withCredentials: true })
     .then((response) => response.data);
 
   return {
@@ -139,7 +139,7 @@ export function loadMyPost(dataToSubmit) {
 // 특정 유저 게시물 검색으로 불러올 때
 export function searchPost(dataToSubmit) {
   const request = instance
-    .post("/api/users/searchpost", dataToSubmit)
+    .post("/api/users/searchpost", dataToSubmit, { withCredentials: true })
     .then((response) => response.data);
 
   return {
@@ -151,7 +151,7 @@ export function searchPost(dataToSubmit) {
 // 특정 게시물 상세보기
 export function showDetail(dataToSubmit) {
   const request = instance
-    .post("/api/users/showdetail", dataToSubmit)
+    .post("/api/users/showdetail", dataToSubmit, { withCredentials: true })
     .then((response) => response.data);
 
   return {
@@ -172,7 +172,7 @@ export function initSearch() {
 // 게시물 삭제할 때
 export function deletePost(dataToSubmit) {
   const request = instance
-    .post("/api/users/deletemypost", dataToSubmit)
+    .post("/api/users/deletemypost", dataToSubmit, { withCredentials: true })
     .then((response) => response.data);
 
   return {
@@ -184,7 +184,9 @@ export function deletePost(dataToSubmit) {
 // 회원 탈퇴 시 해당 유저 게시물 전체 삭제
 export function deleteWholePost(dataToSubmit) {
   const request = instance
-    .post("/api/users/deleteuserwholepost", dataToSubmit)
+    .post("/api/users/deleteuserwholepost", dataToSubmit, {
+      withCredentials: true,
+    })
     .then((response) => response.data);
 
   return {
